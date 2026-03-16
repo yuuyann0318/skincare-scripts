@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>動画台本まとめ｜スキンケア編</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 24px 60px;
+      color: #1a1a1a;
+      background: #f7f8fa;
+      line-height: 1.75;
+    }
+    h1 {
+      font-size: 1.8rem;
+      border-bottom: 3px solid #ec4899;
+      padding-bottom: 10px;
+      margin-bottom: 32px;
+    }
+    h2 {
+      font-size: 1.25rem;
+      background: #ec4899;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      margin-top: 44px;
+      margin-bottom: 10px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+      align-items: center;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: bold;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+    .tag-theme { background: #fce7f3; color: #9d174d; }
+    .tag-kinui  { background: #dbeafe; color: #1e40af; }
+    .tag-katan  { background: #d1fae5; color: #065f46; }
+    .tag-kiten  { background: #fef3c7; color: #92400e; }
+    .tag-none   { background: #f1f5f9; color: #475569; }
+
+    /* テーブル */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 16px;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    th {
+      background: #be185d;
+      color: white;
+      text-align: left;
+      padding: 9px 14px;
+      font-size: 0.88rem;
+    }
+    td {
+      padding: 9px 14px;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 0.88rem;
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #fdf2f8; }
+    .label { font-weight: bold; color: #374151; }
+
+    /* スクリプトボックス */
+    .script-wrap {
+      position: relative;
+      margin: 12px 0 4px;
+    }
+    .script-label {
+      font-weight: bold;
+      color: #374151;
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+    }
+    .script-box {
+      background: white;
+      border-left: 4px solid #ec4899;
+      padding: 14px 20px 14px 20px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.93rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .script-line {
+      margin: 7px 0;
+      padding: 8px 12px;
+      background: #fdf2f8;
+      border-radius: 6px;
+    }
+    .script-line .num {
+      font-weight: bold;
+      color: #ec4899;
+      margin-right: 6px;
+    }
+
+    /* コピーボタン */
+    .copy-btn {
+      position: absolute;
+      top: 28px;
+      right: 8px;
+      background: #ec4899;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+      z-index: 1;
+    }
+    .copy-btn:hover { background: #db2777; }
+    .copy-btn.copied { background: #059669; }
+
+    /* CTAボックス */
+    .cta {
+      background: #fef9c3;
+      border: 1px solid #fde047;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      margin: 8px 0 16px;
+    }
+    .cta::before { content: "📣 "; }
+
+    /* タイムライン */
+    .tl-table th { background: #7c3aed; }
+    .tl-table tr:nth-child(even) td { background: #f5f3ff; }
+    .tl-table tr:nth-child(odd) td { background: white; }
+    .timecode {
+      font-family: monospace;
+      font-weight: bold;
+      color: #7c3aed;
+      white-space: nowrap;
+      font-size: 0.85rem;
+    }
+    .telop { color: #4b5563; font-size: 0.84rem; }
+    .direction { color: #9ca3af; font-size: 0.82rem; font-style: italic; }
+
+    hr { border: none; border-top: 1px solid #e5e7eb; margin: 36px 0; }
+
+    /* サマリー */
+    .summary h2 { background: #059669; }
+    .summary th { background: #047857; }
+    .summary tr:nth-child(even) td { background: #f0fdf4; }
+    .summary tr:nth-child(odd) td { background: white; }
+  </style>
+</head>
+<body>
+
+<h1>動画台本まとめ｜スキンケア編</h1>
+
+<!-- ① -->
+<h2>① 脂性肌と毛穴ケア</h2>
+<div class="meta">
+  <span class="tag tag-theme">テーマ：脂性肌・毛穴の開き改善</span>
+  <span class="tag tag-kinui">📦 KINUI タマヌピュアオイルセラム</span>
+</div>
+<table>
+  <tr><th>項目</th><th>内容</th></tr>
+  <tr><td class="label">ターゲット</td><td>脂性肌で毛穴が開いている人</td></tr>
+  <tr><td class="label">問題提起</td><td>化粧水・乳液が毛穴に汚れを閉じ込めて逆効果になっている</td></tr>
+  <tr><td class="label">解決策</td><td>ピーリング美容液（KINUI）で細胞から作り変える</td></tr>
+  <tr><td class="label">実績</td><td>2週間継続使用で毛穴が改善</td></tr>
+</table>
+<div class="script-wrap">
+  <p class="script-label">セリフ・テロップ</p>
+  <button class="copy-btn" onclick="copyScript(this)">コピー</button>
+  <div class="script-box" id="s1">
+    <div class="script-line"><span class="num">①</span>「脂性肌のせいで毛穴ガン開きの人は、化粧水・乳液やめてください。毛穴に汚れを閉じ込めちゃいます。」</div>
+    <div class="script-line"><span class="num">②</span>「こういうの（鼻や頬のブツブツ）がある人は今まさにソレです。」</div>
+    <div class="script-line"><span class="num">③</span>「そんな時は肌が細胞ごと生まれ変わる、このピーリング美容液だけ使ってください。」</div>
+    <div class="script-line"><span class="num">④</span>「2週間くらいで毛穴消えたんで、自信を持っておすすめします。」</div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ② -->
+<h2>② 裏技ラップケア</h2>
+<div class="meta">
+  <span class="tag tag-theme">テーマ：シミ・ニキビ跡への集中攻撃</span>
+  <span class="tag tag-none">紹介製品：記載なし</span>
+</div>
+<table>
+  <tr><th>項目</th><th>内容</th></tr>
+  <tr><td class="label">ターゲット</td><td>シミ・ニキビ跡に悩む人</td></tr>
+  <tr><td class="label">使用アイテム</td><td>普通のキッチンラップ</td></tr>
+  <tr><td class="label">頻度</td><td>週1回のみ（やりすぎ注意）</td></tr>
+  <tr><td class="label">効果</td><td>Before → After（肌にツヤが出る様子）</td></tr>
+</table>
+<div class="script-wrap">
+  <p class="script-label">セリフ・テロップ</p>
+  <button class="copy-btn" onclick="copyScript(this)">コピー</button>
+  <div class="script-box" id="s2">
+    <div class="script-line"><span class="num">①</span>「誰も知らない裏技ケア。使うのは…これ（ラップ笑）」</div>
+    <div class="script-line"><span class="num">②</span>「このケアは週1のみ！気になる箇所に集中攻撃。」</div>
+    <div class="script-line"><span class="num">③</span>「ついでにおでこも！！それ以外はいつも通りのケアをして…」</div>
+    <div class="script-line"><span class="num">④</span>Before → After（肌にツヤが出る様子）</div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ③ -->
+<h2>③ 顔のブツブツ・毛孔性角化症</h2>
+<div class="meta">
+  <span class="tag tag-theme">テーマ：毛孔性角化症ケア</span>
+  <span class="tag tag-katan">📦 KATAN シカクレンジングバーム 炭ブラック</span>
+</div>
+<table>
+  <tr><th>項目</th><th>内容</th></tr>
+  <tr><td class="label">ターゲット</td><td>顔のザラつき・ブツブツに悩む人</td></tr>
+  <tr><td class="label">問題提起</td><td>毛孔性角化症は放置しても一生治らない</td></tr>
+  <tr><td class="label">信頼性</td><td>皮膚科で働くママのおすすめという情報源で訴求</td></tr>
+  <tr><td class="label">効果</td><td>数日でブツブツ解消、ちゅるん肌に</td></tr>
+</table>
+<div class="script-wrap">
+  <p class="script-label">セリフ・テロップ</p>
+  <button class="copy-btn" onclick="copyScript(this)">コピー</button>
+  <div class="script-box" id="s3">
+    <div class="script-line"><span class="num">①</span>「画面ぶつぶつだらけのやつ全員これ使え。実はそれ毛孔性角化症と言って、放置してても一生治りませんっ！」</div>
+    <div class="script-line"><span class="num">②</span>「皮膚科で働くママに相談したら、このクレンジングバーム教えてくれて…」</div>
+    <div class="script-line"><span class="num">③</span>「数日使ってみたらぶつぶつ全部ぶっ飛んで、めっちゃちゅるん肌爆誕した！」</div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ④ -->
+<h2>④ 角栓・黒ずみ除去</h2>
+<div class="meta">
+  <span class="tag tag-theme">テーマ：鼻の角栓・毛穴の黒ずみ</span>
+  <span class="tag tag-katan">📦 KATAN シカクレンジングバーム 炭ブラック</span>
+</div>
+<table>
+  <tr><th>項目</th><th>内容</th></tr>
+  <tr><td class="label">ターゲット</td><td>鼻の黒ずみ・角栓が気になる人</td></tr>
+  <tr><td class="label">訴求ポイント</td><td>目に見えて角栓が取れるインパクト映像で訴求</td></tr>
+  <tr><td class="label">構成</td><td>Before（鼻の黒ずみ）→ After（ツルツルの鼻）</td></tr>
+</table>
+<div class="script-wrap">
+  <p class="script-label">セリフ・テロップ</p>
+  <button class="copy-btn" onclick="copyScript(this)">コピー</button>
+  <div class="script-box" id="s4">
+    <div class="script-line"><span class="num">①</span>「キテる、マジキテる。角栓出てる。」</div>
+    <div class="script-line"><span class="num">②</span>Before（鼻の黒ずみ）→ After（ツルツルの鼻）</div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ⑤ -->
+<h2>⑤ 導入美容液の注意点（針美容液）</h2>
+<div class="meta">
+  <span class="tag tag-theme">テーマ：針美容液の正しい使い方 ＆ 最安値情報</span>
+  <span class="tag tag-katan">📦 KATAN シカダーマ ヒットセラム</span>
+</div>
+<table>
+  <tr><th>注意点</th><th>内容</th></tr>
+  <tr><td class="label">①　塗るタイミング</td><td>洗顔後すぐ（一番最初）に使う。後回しにすると効果がでない＝金ドブ</td></tr>
+  <tr><td class="label">②　購入価格</td><td>通常価格5,720円で買うのはNG。公式サイトなら初回1,860円</td></tr>
+  <tr><td class="label">製品特徴</td><td>180万本の美容針がお肌に小さな穴をあけ、角質の奥まで栄養を届ける</td></tr>
+</table>
+<div class="script-wrap">
+  <p class="script-label">セリフ・テロップ</p>
+  <button class="copy-btn" onclick="copyScript(this)">コピー</button>
+  <div class="script-box" id="s5">
+    <div class="script-line"><span class="num">①</span>「正直危険。間違えたらダメなこと2つ伝えるからよく聞いて。」</div>
+    <div class="script-line"><span class="num">②</span>「その① 塗るタイミング：洗顔後すぐに使わないとマジで金ドブ。」</div>
+    <div class="script-line"><span class="num">③</span>「180万本の美容針がお肌に小さな穴をあけて、角質の奥まで栄養を届けてくれる。」</div>
+    <div class="script-line"><span class="num">④</span>「その② お値段：通常価格（5,720円）で買おうとしている人は情弱すぎる。最安値は公式サイト（1,860円）。」</div>
+  </div>
+</div>
+<div class="cta">公式サイト（初回1,860円）はプロフリンクから</div>
+
+<hr>
+
+<!-- ⑥ -->
+<h2>⑥ KINUI 使用時の3つの注意点</h2>
+<div class="meta">
+  <span class="tag tag-theme">テーマ：KINUIの正しい使い方 ＆ 最安値情報</span>
+  <span class="tag tag-kinui">📦 KINUI タマヌピュアオイルセラム</span>
+</div>
+<table>
+  <tr><th>注意点</th><th>内容</th></tr>
+  <tr><td class="label">①　効果が出るまでの期間</td><td>「3日で効果」は嘘。ターンオーバーの周期上、最低1ヶ月は継続が必要</td></tr>
+  <tr><td class="label">②　使うタイミング</td><td>化粧水の「前」に使う。後だと浸透が悪く効果が半減する</td></tr>
+  <tr><td class="label">③　購入場所</td><td>Amazon・楽天不可。初回限定1,980円のサイトを使う（定価5,000円以上）</td></tr>
+</table>
+<div class="script-wrap">
+  <p class="script-label">セリフ・テロップ</p>
+  <button class="copy-btn" onclick="copyScript(this)">コピー</button>
+  <div class="script-box" id="s6">
+    <div class="script-line"><span class="num">①</span>「注意点その①：TikTokで『3日で毛穴消えた』とかあるけど、あれは嘘。ターンオーバーの周期的に3日は無理。私は1ヶ月毎日使って綺麗になった。」</div>
+    <div class="script-line"><span class="num">②</span>「注意点その②：使うタイミングは化粧水の『前』。後に使うと浸透が悪くてもったいない。」</div>
+    <div class="script-line"><span class="num">③</span>「注意点その③：Amazonとかで買わないで。定価5,000円以上するけど、初めての人は1,980円で買えるサイトがある。」</div>
+  </div>
+</div>
+<div class="cta">初回限定1,980円のサイトはプロフリンクから</div>
+
+<hr>
+
+<!-- ⑦ -->
+<h2>⑦ ハイドロキノンクリームの注意点</h2>
+<div class="meta">
+  <span class="tag tag-theme">テーマ：シミ集中ケア ＆ 使い方の注意</span>
+  <span class="tag tag-kiten">📦 KITEN HQホワイトクリーム（ハイドロキノン6.0%配合）</span>
+</div>
+<table>
+  <tr><th>注意点</th><th>内容</th></tr>
+  <tr><td class="label">①　価格</td><td>初回限定価格（980円）で買う。通常定価は約3,000円</td></tr>
+  <tr><td class="label">②　使う順番</td><td>スキンケアの「一番最後」に使う。順番を間違えると効果が半減する</td></tr>
+  <tr><td class="label">総評</td><td>低刺激なのにちゃんと効果あり。1ヶ月使って買って正解だったと実感</td></tr>
+</table>
+<div class="script-wrap">
+  <p class="script-label">セリフ・テロップ</p>
+  <button class="copy-btn" onclick="copyScript(this)">コピー</button>
+  <div class="script-box" id="s7">
+    <div class="script-line"><span class="num">①</span>「1ヶ月使った私から2つ注意点。商品自体は買って正解だった！低刺激なのにちゃんと効果ある。」</div>
+    <div class="script-line"><span class="num">②</span>「注意点その①：初回限定価格で買って！定価は3,000円くらいだけど、初回なら980円。」</div>
+    <div class="script-line"><span class="num">③</span>「注意点その②：スキンケアの『一番最後』に使ってね。順番間違えると効果半減しちゃう。」</div>
+  </div>
+</div>
+<div class="cta">初回限定980円はプロフリンクから</div>
+
+<hr>
+
+<!-- ⑧ -->
+<h2>⑧ レチノール×シカ 15日間経過記録</h2>
+<div class="meta">
+  <span class="tag tag-theme">テーマ：レチノールによる肌質改善の経過</span>
+  <span class="tag tag-kiten">📦 KITEN RTケアクリーム（レチノール×CICA）</span>
+</div>
+<table>
+  <tr><th>項目</th><th>内容</th></tr>
+  <tr><td class="label">ターゲット</td><td>毛穴・肌荒れ・左右非対称が気になる人</td></tr>
+  <tr><td class="label">記録タイムライン</td><td>1日目 → 5日目 → 10日目 → 12日目 → 15日目</td></tr>
+  <tr><td class="label">変化の様子</td><td>徐々に毛穴が目立たなくなり、肌が明るくなっていく</td></tr>
+  <tr><td class="label">商品通称</td><td>キテンレチ（KITEN RT）</td></tr>
+</table>
+<div class="script-wrap">
+  <p class="script-label">セリフ・テロップ</p>
+  <button class="copy-btn" onclick="copyScript(this)">コピー</button>
+  <div class="script-box" id="s8">
+    <div class="script-line"><span class="num">①</span>「片側だけやり続けてたら左右非対称になったので、急ピッチで直してみた。」</div>
+    <div class="script-line"><span class="num">②</span>1日目 → 5日目 → 10日目 → 12日目 → 15日目（徐々に毛穴が目立たなくなり、肌が明るくなる様子）</div>
+    <div class="script-line"><span class="num">③</span>「これエッグいな。キテンレチ（KITEN RT）だよ。」</div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ⑨ -->
+<h2>⑨ メンズ毛穴ケア｜密閉ドーピング（完全台本 35秒）</h2>
+<div class="meta">
+  <span class="tag tag-theme">テーマ：男性向け毛穴ケア × ラップ密閉パック</span>
+  <span class="tag tag-kinui">📦 KINUI タマヌピュアオイルセラム</span>
+</div>
+<table>
+  <tr><th>項目</th><th>内容</th></tr>
+  <tr><td class="label">ターゲット</td><td>20代後半〜30代男性、毛穴ガン開きのまま放置している人</td></tr>
+  <tr><td class="label">フック</td><td>「メンズの肌質が女子の結婚条件に入っている」という危機感訴求</td></tr>
+  <tr><td class="label">方法</td><td>週1回、KINUI塗布後にラップで密閉パック → 10分後に剥がすだけ</td></tr>
+  <tr><td class="label">実績</td><td>2週間でボコボコ肌が改善（Before/After提示）</td></tr>
+  <tr><td class="label">尺</td><td>約35秒</td></tr>
+</table>
+<p class="script-label" style="margin-top:14px;">台本（タイムライン）</p>
+<table class="tl-table">
+  <tr>
+    <th style="width:100px;">時間</th>
+    <th style="width:34%;">セリフ</th>
+    <th style="width:34%;">テロップ</th>
+    <th>映像メモ</th>
+  </tr>
+  <tr>
+    <td class="timecode">0:00〜0:02</td>
+    <td>「女子に『肌きもい』って思われてる人、一生独身で終わるかも。」</td>
+    <td class="telop">女子に『肌きもい』って思われてる人 ／ 一生独身で終わるかも⚠️</td>
+    <td class="direction">カメラに向かって指をさす、または不潔な肌のアップからスタート</td>
+  </tr>
+  <tr>
+    <td class="timecode">0:03〜0:05</td>
+    <td>「実は今、メンズの肌質が女子の『結婚条件』に入ってるの知ってた？」</td>
+    <td class="telop">実は今、メンズの肌質が ／ 女子の『結婚条件』に入ってるって知ってた？💍</td>
+    <td class="direction">—</td>
+  </tr>
+  <tr>
+    <td class="timecode">0:06〜0:08</td>
+    <td>「特に20代後半、毛穴ガン開きのまま放置は、マジで人生の損失です。」</td>
+    <td class="telop">特に20代後半 ／ 毛穴ガン開きの放置はマジで人生の損失</td>
+    <td class="direction">—</td>
+  </tr>
+  <tr>
+    <td class="timecode">0:09〜0:11</td>
+    <td>「でも、高いエステも面倒な5ステップケアも、一切いりません。」</td>
+    <td class="telop">高いエステも ／ 面倒な5ステップケアも一切不要🙅‍♂️</td>
+    <td class="direction">—</td>
+  </tr>
+  <tr>
+    <td class="timecode">0:12〜0:13</td>
+    <td>「使うのは…これ。（1円玉サイズのラップ）」</td>
+    <td class="telop">使うのは…これ（ラップ笑）💡</td>
+    <td class="direction">ピンセットで小さく切ったラップを見せる</td>
+  </tr>
+  <tr>
+    <td class="timecode">0:14〜0:16</td>
+    <td>「この『密閉ドーピング』は週1回だけやってください。」</td>
+    <td class="telop">この『密閉ドーピング』は週1回だけ！</td>
+    <td class="direction">—</td>
+  </tr>
+  <tr>
+    <td class="timecode">0:17〜0:19</td>
+    <td>「このタマヌオイルを、毛穴が気になる鼻や頬に塗りたくって…」</td>
+    <td class="telop">この美容液を ／ 毛穴が気になる部分に塗りたくって…</td>
+    <td class="direction">商品（KINUI）を手に取り、肌に塗る様子</td>
+  </tr>
+  <tr>
+    <td class="timecode">0:20〜0:22</td>
+    <td>「その上からラップで強制パック。これだけで細胞から作り変えます。」</td>
+    <td class="telop">その上からラップで強制パック！ ／ 細胞から作り変える。🧬</td>
+    <td class="direction">ラップを肌に貼るインパクトのある映像</td>
+  </tr>
+  <tr>
+    <td class="timecode">0:23〜0:25</td>
+    <td>「10分経ったら剥がして、馴染ませるだけ。あとは寝てOK。」</td>
+    <td class="telop">10分経ったら剥がして馴染ませるだけ ／ あとは寝てOK😴</td>
+    <td class="direction">—</td>
+  </tr>
+  <tr>
+    <td class="timecode">0:26〜0:28</td>
+    <td>「（Before/After画像）見て。ボコボコだった僕の肌、2週間でこれ。」</td>
+    <td class="telop">【衝撃】2週間で毛穴消滅 ／ 清潔感ヤバくない？✨</td>
+    <td class="direction">劇的なビフォーアフターを提示</td>
+  </tr>
+  <tr>
+    <td class="timecode">0:29〜0:31</td>
+    <td>「今なら限定で安く試せるから、モテたい奴はプロフのリンクから急いで。」</td>
+    <td class="telop">今なら限定価格で試せる！ ／ モテたい奴はプロフから急げ💨</td>
+    <td class="direction">—</td>
+  </tr>
+  <tr>
+    <td class="timecode">0:32〜0:35</td>
+    <td>「正直、これ知らない周りの男と、圧倒的な差がつきます。」</td>
+    <td class="telop">これ知らない周りと ／ 圧倒的な差がつく。</td>
+    <td class="direction">—</td>
+  </tr>
+</table>
+<div class="cta">プロフのリンクから限定価格で今すぐ試す</div>
+
+<hr>
+
+<!-- サマリー -->
+<div class="summary">
+<h2>全体サマリー</h2>
+<table>
+  <tr><th>#</th><th>タイトル</th><th>テーマ</th><th>製品</th><th>ターゲット感情</th><th>主なCTA</th></tr>
+  <tr><td>①</td><td>脂性肌と毛穴ケア</td><td>毛穴改善</td><td>KINUI</td><td>危機感・解決期待</td><td>製品購入</td></tr>
+  <tr><td>②</td><td>裏技ラップケア</td><td>集中ケア</td><td>—</td><td>驚き・お得感</td><td>週1実践</td></tr>
+  <tr><td>③</td><td>顔のブツブツ・毛孔性角化症</td><td>肌ザラつき改善</td><td>KATAN</td><td>焦り・共感</td><td>製品購入</td></tr>
+  <tr><td>④</td><td>角栓・黒ずみ除去</td><td>毛穴の黒ずみ</td><td>KATAN</td><td>インパクト・驚き</td><td>製品購入</td></tr>
+  <tr><td>⑤</td><td>導入美容液の注意点</td><td>正しい使い方・最安値</td><td>KATAN</td><td>損したくない</td><td>公式サイト購入</td></tr>
+  <tr><td>⑥</td><td>KINUIの3つの注意点</td><td>正しい使い方・最安値</td><td>KINUI</td><td>損したくない</td><td>初回限定購入</td></tr>
+  <tr><td>⑦</td><td>ハイドロキノンクリーム</td><td>シミ集中ケア</td><td>KITEN</td><td>お得感・安心</td><td>初回限定購入</td></tr>
+  <tr><td>⑧</td><td>レチノール×シカ経過</td><td>肌質改善の経過記録</td><td>KITEN</td><td>期待・共感</td><td>製品購入</td></tr>
+  <tr><td>⑨</td><td>メンズ密閉ドーピング</td><td>メンズ毛穴ケア</td><td>KINUI</td><td>焦り・競争心</td><td>プロフから購入</td></tr>
+</table>
+</div>
+
+<script>
+  function copyScript(btn) {
+    const box = btn.nextElementSibling;
+    const lines = box.querySelectorAll('.script-line');
+    let text = '';
+    lines.forEach(function(line) {
+      // 番号スパンを除いたテキストを取得
+      const clone = line.cloneNode(true);
+      const numSpan = clone.querySelector('.num');
+      if (numSpan) numSpan.remove();
+      text += clone.textContent.trim() + '\n\n';
+    });
+    navigator.clipboard.writeText(text.trim()).then(function() {
+      btn.textContent = 'コピー済み ✓';
+      btn.classList.add('copied');
+      setTimeout(function() {
+        btn.textContent = 'コピー';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+</script>
+
+</body>
+</html>
