@@ -252,22 +252,6 @@
  font-weight: 700;
  color: var(--ink);
  }
-
- /* 画像が未設定の場合のプレースホルダー表示 */
- .img-box img[src*="YOUR-IMAGE-HOST"] {
-   background: linear-gradient(135deg, #F0F0F0 0%, #E0E0E0 100%);
-   display: flex;
-   align-items: center;
-   justify-content: center;
- }
- .img-box img[src*="YOUR-IMAGE-HOST"]::after {
-   content: attr(alt);
-   display: block;
-   font-size: 0.65rem;
-   color: #999;
-   text-align: center;
-   padding: 8px;
- }
  </style>
 </head>
 <body>
@@ -277,31 +261,19 @@
   最終更新: 2026-03
 ===========================================================
 
-  ■ 画像の差し替え方法（必須）
+  ■ 画像について
   ---------------------------------------------------------
-  このファイルではリペア前後の画像URLが仮置きになっています。
-  以下の手順で実際の画像URLに置き換えてください。
-
-  【STEP 1】画像をアップロード
-  GyazoやImgBB、Cloudinaryなどに画像をアップロードし、
-  直リンク（.webp / .jpg / .png）のURLを取得してください。
-
-  【STEP 2】以下の6か所を検索して置き換え
-  ファイルをテキストエディタで開き、Ctrl+H（Mac: Cmd+H）で
-  「YOUR-IMAGE-HOST.com」を検索し、実際のURLに差し替え。
-
-    ring-before.webp          → リング リペア前の画像URL
-    ring-after.webp           → リング リペア後の画像URL
-    heart-necklace-before.webp → ハートネックレス リペア前の画像URL
-    heart-necklace-after.webp  → ハートネックレス リペア後の画像URL
-    bangle-before.webp        → バングル リペア前の画像URL
-    bangle-after.webp         → バングル リペア後の画像URL
+  リペア前後の画像はすべてGyazo CDNの直リンクURLで設定済みです。
+    カーブドハートピアス  Before / After
+    イニシャルネックレス  Before / After
+    リターントゥハートブレスレット  Before / After
+  画像を差し替える場合は i.gyazo.com のURLを新しいURLに置換してください。
 
   ■ UTAGEアップロード時の注意
   ---------------------------------------------------------
-  - ファイルサイズ: 約30KB（大幅に削減済み・問題なし）
+  - ファイルサイズ: 約41KB（問題なし）
   - 外部フォント: Google Fonts / Font Awesome（CDN経由）
-  - 外部画像: Gyazo CDN + 上記差し替え後の画像URL
+  - 外部画像: Gyazo CDN（i.gyazo.com）
   - JavaScript: なし（UTAGEと完全互換）
 
 ===========================================================
@@ -392,52 +364,88 @@
  </p>
  </div>
  <!-- リペア写真 3セット -->
- <div style="display:flex; flex-direction:column; gap:20px;">
- <!-- Set 1: Ring -->
- <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
- <div>
- <div class="img-box img-box-before">
- <img src="https://YOUR-IMAGE-HOST.com/ring-before.webp" alt="リング リペア前" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
- </div>
- <div class="badge-before">Before</div>
- </div>
- <div>
- <div class="img-box img-box-after">
- <img src="https://YOUR-IMAGE-HOST.com/ring-after.webp" alt="リング リペア後" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
- </div>
- <div class="badge-after">After</div>
- </div>
- </div>
- <!-- Set 2: Heart Necklace -->
- <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
- <div>
- <div class="img-box img-box-before">
- <img src="https://YOUR-IMAGE-HOST.com/heart-necklace-before.webp" alt="ハートネックレス リペア前" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
- </div>
- <div class="badge-before">Before</div>
- </div>
- <div>
- <div class="img-box img-box-after">
- <img src="https://YOUR-IMAGE-HOST.com/heart-necklace-after.webp" alt="ハートネックレス リペア後" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
- </div>
- <div class="badge-after">After</div>
- </div>
- </div>
- <!-- Set 3: Bangle -->
- <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
- <div>
- <div class="img-box img-box-before">
- <img src="https://YOUR-IMAGE-HOST.com/bangle-before.webp" alt="バングル リペア前" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
- </div>
- <div class="badge-before">Before</div>
- </div>
- <div>
- <div class="img-box img-box-after">
- <img src="https://YOUR-IMAGE-HOST.com/bangle-after.webp" alt="バングル リペア後" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
- </div>
- <div class="badge-after">After</div>
- </div>
- </div>
+ <div style="display:flex; flex-direction:column; gap:16px;">
+   <!-- Set 1: カーブドハートピアス -->
+   <div style="background:#FFFFFF; border:1.5px solid var(--rule); border-radius:18px; overflow:hidden;">
+    <div style="background:var(--bg-section); border-bottom:1px solid var(--rule); padding:10px 16px; display:flex; align-items:center; gap:10px;">
+     <div class="num-badge" style="width:28px;height:28px;font-size:0.65rem;">01</div>
+     <p style="font-size:0.85rem; font-weight:800; color:var(--ink); letter-spacing:0.02em;">カーブドハートピアス</p>
+    </div>
+    <div style="padding:14px;">
+     <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px;">
+      <div>
+       <div class="img-box img-box-before">
+        <img src="https://i.gyazo.com/2a1387661bbae3e0f4ac0d6d30456cba.png" alt="カーブドハートピアス リペア前" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
+       </div>
+       <div class="badge-before">Before</div>
+      </div>
+      <div>
+       <div class="img-box img-box-after">
+        <img src="https://i.gyazo.com/d18b4277ffcc492503782a5a8ace324a.png" alt="カーブドハートピアス リペア後" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
+       </div>
+       <div class="badge-after">After</div>
+      </div>
+     </div>
+     <div style="background:var(--ink); border-radius:12px; padding:10px 14px; display:flex; align-items:center; justify-content:space-between;">
+      <p style="font-size:0.6rem; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold);">PROFIT</p>
+      <p style="font-size:1.4rem; font-weight:900; color:#FFFFFF; line-height:1;">¥6,635<span style="font-size:0.7rem; color:rgba(255,255,255,0.5); font-weight:600; margin-left:3px;">円</span></p>
+     </div>
+    </div>
+   </div>
+   <!-- Set 2: イニシャルネックレス -->
+   <div style="background:#FFFFFF; border:1.5px solid var(--rule); border-radius:18px; overflow:hidden;">
+    <div style="background:var(--bg-section); border-bottom:1px solid var(--rule); padding:10px 16px; display:flex; align-items:center; gap:10px;">
+     <div class="num-badge" style="width:28px;height:28px;font-size:0.65rem;">02</div>
+     <p style="font-size:0.85rem; font-weight:800; color:var(--ink); letter-spacing:0.02em;">イニシャルネックレス</p>
+    </div>
+    <div style="padding:14px;">
+     <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px;">
+      <div>
+       <div class="img-box img-box-before">
+        <img src="https://i.gyazo.com/636cde5296cd0b59a64929c17a2ec5d2.png" alt="イニシャルネックレス リペア前" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
+       </div>
+       <div class="badge-before">Before</div>
+      </div>
+      <div>
+       <div class="img-box img-box-after">
+        <img src="https://i.gyazo.com/77b349b9f6c2499098046a39f71a8d1b.png" alt="イニシャルネックレス リペア後" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
+       </div>
+       <div class="badge-after">After</div>
+      </div>
+     </div>
+     <div style="background:var(--ink); border-radius:12px; padding:10px 14px; display:flex; align-items:center; justify-content:space-between;">
+      <p style="font-size:0.6rem; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold);">PROFIT</p>
+      <p style="font-size:1.4rem; font-weight:900; color:#FFFFFF; line-height:1;">¥2,470<span style="font-size:0.7rem; color:rgba(255,255,255,0.5); font-weight:600; margin-left:3px;">円</span></p>
+     </div>
+    </div>
+   </div>
+   <!-- Set 3: リターントゥハートブレスレット -->
+   <div style="background:#FFFFFF; border:1.5px solid var(--rule); border-radius:18px; overflow:hidden;">
+    <div style="background:var(--bg-section); border-bottom:1px solid var(--rule); padding:10px 16px; display:flex; align-items:center; gap:10px;">
+     <div class="num-badge" style="width:28px;height:28px;font-size:0.65rem;">03</div>
+     <p style="font-size:0.85rem; font-weight:800; color:var(--ink); letter-spacing:0.02em;">リターントゥハートブレスレット</p>
+    </div>
+    <div style="padding:14px;">
+     <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px;">
+      <div>
+       <div class="img-box img-box-before">
+        <img src="https://i.gyazo.com/b823b1a6628d2755e704e4ab0c9ec920.png" alt="リターントゥハートブレスレット リペア前" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
+       </div>
+       <div class="badge-before">Before</div>
+      </div>
+      <div>
+       <div class="img-box img-box-after">
+        <img src="https://i.gyazo.com/745a51d1a4890daac4e0d2e95bba6f97.png" alt="リターントゥハートブレスレット リペア後" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
+       </div>
+       <div class="badge-after">After</div>
+      </div>
+     </div>
+     <div style="background:var(--ink); border-radius:12px; padding:10px 14px; display:flex; align-items:center; justify-content:space-between;">
+      <p style="font-size:0.6rem; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold);">PROFIT</p>
+      <p style="font-size:1.4rem; font-weight:900; color:#FFFFFF; line-height:1;">¥4,420<span style="font-size:0.7rem; color:rgba(255,255,255,0.5); font-weight:600; margin-left:3px;">円</span></p>
+     </div>
+    </div>
+   </div>
  </div>
  </div>
  <!-- ===== POINT 02: FAKES ===== -->
@@ -633,6 +641,114 @@
  </div>
  </section>
  <div class="stripe-divider"></div>
+ <!-- ===== PROFIT CALCULATION ===== -->
+ <div class="stripe-divider"></div>
+ <section style="padding: 56px 28px; background: var(--ink);">
+  <div style="margin-bottom:40px; text-align:center;">
+   <div class="section-label" style="background:rgba(212,175,55,0.12); border-color:rgba(212,175,55,0.3); color:var(--gold-light);">Real Results</div>
+   <h2 style="margin-top:12px; font-size:1.4rem; font-weight:900; color:#FFFFFF; line-height:1.4;">
+    利益計算
+   </h2>
+   <p style="font-size:0.875rem; color:rgba(255,255,255,0.45); margin-top:12px; line-height:1.9;">
+    実際にリペアして出品した商品の<br>リアルな利益実例です。
+   </p>
+  </div>
+  <!-- Cards -->
+  <div style="display:flex; flex-direction:column; gap:20px;">
+   <!-- Profit Case 01 -->
+   <div style="background:#FFFFFF; border-radius:20px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+    <div style="background:linear-gradient(135deg,var(--gold-bg),#FFFFFF); border-bottom:1px solid var(--gold-light); padding:14px 20px; display:flex; align-items:center; gap:12px;">
+     <div class="num-badge" style="background:var(--gold); color:var(--ink);">01</div>
+     <p style="font-size:0.9rem; font-weight:800; color:var(--ink);">カーブドハートピアス</p>
+    </div>
+    <div style="padding:16px 16px 20px;">
+     <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px;">
+      <div>
+       <div class="img-box img-box-before">
+        <img src="https://i.gyazo.com/2a1387661bbae3e0f4ac0d6d30456cba.png" alt="カーブドハートピアス リペア前" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
+       </div>
+       <div class="badge-before">Before</div>
+      </div>
+      <div>
+       <div class="img-box img-box-after">
+        <img src="https://i.gyazo.com/d18b4277ffcc492503782a5a8ace324a.png" alt="カーブドハートピアス リペア後" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
+       </div>
+       <div class="badge-after">After</div>
+      </div>
+     </div>
+     <div style="background:var(--ink); border-radius:14px; padding:16px; text-align:center;">
+      <p style="font-size:0.6rem; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:6px;">PROFIT</p>
+      <p style="font-size:2.2rem; font-weight:900; color:#FFFFFF; line-height:1; letter-spacing:-0.02em;">¥6,635<span style="font-size:1rem; color:rgba(255,255,255,0.6); font-weight:600; margin-left:2px;">円</span></p>
+     </div>
+    </div>
+   </div>
+   <!-- Profit Case 02 -->
+   <div style="background:#FFFFFF; border-radius:20px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+    <div style="background:linear-gradient(135deg,var(--gold-bg),#FFFFFF); border-bottom:1px solid var(--gold-light); padding:14px 20px; display:flex; align-items:center; gap:12px;">
+     <div class="num-badge" style="background:var(--gold); color:var(--ink);">02</div>
+     <p style="font-size:0.9rem; font-weight:800; color:var(--ink);">イニシャルネックレス</p>
+    </div>
+    <div style="padding:16px 16px 20px;">
+     <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px;">
+      <div>
+       <div class="img-box img-box-before">
+        <img src="https://i.gyazo.com/636cde5296cd0b59a64929c17a2ec5d2.png" alt="イニシャルネックレス リペア前" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
+       </div>
+       <div class="badge-before">Before</div>
+      </div>
+      <div>
+       <div class="img-box img-box-after">
+        <img src="https://i.gyazo.com/77b349b9f6c2499098046a39f71a8d1b.png" alt="イニシャルネックレス リペア後" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
+       </div>
+       <div class="badge-after">After</div>
+      </div>
+     </div>
+     <div style="background:var(--ink); border-radius:14px; padding:16px; text-align:center;">
+      <p style="font-size:0.6rem; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:6px;">PROFIT</p>
+      <p style="font-size:2.2rem; font-weight:900; color:#FFFFFF; line-height:1; letter-spacing:-0.02em;">¥2,470<span style="font-size:1rem; color:rgba(255,255,255,0.6); font-weight:600; margin-left:2px;">円</span></p>
+     </div>
+    </div>
+   </div>
+   <!-- Profit Case 03 -->
+   <div style="background:#FFFFFF; border-radius:20px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+    <div style="background:linear-gradient(135deg,var(--gold-bg),#FFFFFF); border-bottom:1px solid var(--gold-light); padding:14px 20px; display:flex; align-items:center; gap:12px;">
+     <div class="num-badge" style="background:var(--gold); color:var(--ink);">03</div>
+     <p style="font-size:0.9rem; font-weight:800; color:var(--ink);">リターントゥハートブレスレット</p>
+    </div>
+    <div style="padding:16px 16px 20px;">
+     <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px;">
+      <div>
+       <div class="img-box img-box-before">
+        <img src="https://i.gyazo.com/b823b1a6628d2755e704e4ab0c9ec920.png" alt="リターントゥハートブレスレット リペア前" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
+       </div>
+       <div class="badge-before">Before</div>
+      </div>
+      <div>
+       <div class="img-box img-box-after">
+        <img src="https://i.gyazo.com/745a51d1a4890daac4e0d2e95bba6f97.png" alt="リターントゥハートブレスレット リペア後" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
+       </div>
+       <div class="badge-after">After</div>
+      </div>
+     </div>
+     <div style="background:var(--ink); border-radius:14px; padding:16px; text-align:center;">
+      <p style="font-size:0.6rem; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:6px;">PROFIT</p>
+      <p style="font-size:2.2rem; font-weight:900; color:#FFFFFF; line-height:1; letter-spacing:-0.02em;">¥4,420<span style="font-size:1rem; color:rgba(255,255,255,0.6); font-weight:600; margin-left:2px;">円</span></p>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Total -->
+  <div style="margin-top:36px; background:linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 60%, var(--gold-light) 100%); border-radius:22px; padding:32px 24px; text-align:center; box-shadow:0 8px 32px rgba(212,175,55,0.35);">
+   <p style="font-size:0.65rem; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:rgba(0,0,0,0.45); margin-bottom:10px;">3商品 合計利益</p>
+   <p style="font-size:3.2rem; font-weight:900; color:var(--ink); line-height:1; letter-spacing:-0.03em;">¥13,525<span style="font-size:1.2rem; font-weight:700; margin-left:4px;">円</span></p>
+   <div style="width:36px; height:2px; background:rgba(0,0,0,0.2); margin:16px auto;"></div>
+   <p style="font-size:0.8rem; font-weight:700; color:rgba(0,0,0,0.55); line-height:1.7;">
+    これがアクセサリーせどりの実力。<br>
+    <span style="color:rgba(0,0,0,0.8); font-weight:800;">知識さえあれば、誰でも再現できます。</span>
+   </p>
+  </div>
+ </section>
+
  <!-- ===== MERITS ===== -->
  <section style="padding: 56px 28px; background:#FFFFFF;">
  <div style="margin-bottom:40px;">
